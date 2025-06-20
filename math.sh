@@ -32,3 +32,13 @@ function div(){
 	done
 	echo "$result"
 }
+
+function pow(){
+	local result=$1
+	shift
+	for arg in "$@"; do
+		result=$(echo "$result ^ $arg" | bc)
+	done
+	echo "$result"
+}
+
